@@ -1,0 +1,2 @@
+module SampleApp
+end

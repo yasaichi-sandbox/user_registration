@@ -1,0 +1,4 @@
+/.bundle/
+/db/*.sqlite
+/public/assets*
+/tmp
