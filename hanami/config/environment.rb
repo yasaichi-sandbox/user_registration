@@ -29,14 +29,21 @@ Hanami.configure do
 
   mailer do
     root 'lib/sample_app/mailers'
-
-    # See http://hanamirb.org/guides/mailers/delivery
-    delivery :test
   end
 
   environment :development do
     # See: http://hanamirb.org/guides/projects/logging
     logger level: :debug
+
+    mailer do
+      delivery LetterOpener::DeliveryMethod, location: File.expand_path('../tmp/letter_opener', __dir__)
+    end
+  end
+
+  environment :test do
+    mailer do
+      delivery :test
+    end
   end
 
   environment :production do

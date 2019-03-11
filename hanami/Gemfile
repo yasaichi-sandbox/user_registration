@@ -11,6 +11,8 @@ group :development do
   # See: http://hanamirb.org/guides/projects/code-reloading
   gem 'shotgun', platforms: :ruby
   gem 'hanami-webconsole'
+
+  gem 'letter_opener'
 end
 
 group :test, :development do
@@ -19,9 +21,14 @@ end
 
 group :test do
   gem 'rspec'
+  gem 'rspec-its'
   gem 'capybara'
+  gem 'capybara-email'
 end
 
 group :production do
   # gem 'puma'
 end
+
+gem 'dry-inflector'
+gem 'sass'

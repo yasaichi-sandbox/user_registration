@@ -1,5 +1,7 @@
-# Configure your routes here
-# See: http://hanamirb.org/guides/routing/overview/
-#
-# Example:
-# get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
+resources :user_registrations, only: %i[new create] do
+  collection do
+    get 'complete'
+  end
+
+  resource :confirmation, only: %i[new], module: :user_registrations
+end

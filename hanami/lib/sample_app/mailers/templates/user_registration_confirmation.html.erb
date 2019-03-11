@@ -1,0 +1,10 @@
+<p>Welcome <%= user_registration.email %>!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p>
+  <%= link_to(
+    'Confirm my account',
+    Web.routes.new_user_registration_confirmation_url(user_registration.confirmation_token)
+  ) %>
+</p>

@@ -1,0 +1,28 @@
+<h1>New User Registration</h1>
+
+<% if error_messages.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(error_messages.size, "error") %> prohibited this user_registration from being saved:
+    </h2>
+
+    <ul>
+    <% error_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%=
+  form_for :user_registration, routes.user_registrations_path do
+    div class: :field do
+      label :email
+      text_field :email
+    end
+
+    div class: :actions do
+      submit "Sign up"
+    end
+  end
+%>
